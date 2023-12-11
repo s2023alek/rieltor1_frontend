@@ -1,0 +1,12 @@
+
+.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.cr {
+    margin: 0 auto;
+    width: 1170px;
+    padding-left: 40px;
+    padding-right: 40px;
+}

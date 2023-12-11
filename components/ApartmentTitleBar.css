@@ -1,0 +1,35 @@
+
+.detail__id {
+    float: left;
+    position: relative;
+    top: 7px;
+}
+
+.detail__id::before {
+    content: "ID " attr(data-id);
+    line-height: 24px;
+    margin-right: 24px;
+    background: #93ad20;
+    display: block;
+    padding: 0 6px 0 12px;
+    border-radius: 12px 2px 2px 12px;
+    color: #fff;
+    font-size: .9rem;
+}
+
+.detail__id::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 12px 12px 0;
+    border-color: #93ad20 transparent;
+    transform: rotate(-90deg);
+    top: 6px;
+    right: 7px;
+}
+
+.detail__title {
+    font-size: 32px !important;
+    line-height: 1.125 !important;
+    font-weight: 400 !important;
+}

@@ -1,0 +1,45 @@
+/*
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*/
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.h3, .h4, h3, h4 {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+ul {
+  list-style: none;
+}
+
+
+.link, a {
+  text-decoration: none;
+  color: #e95d0f;
+}
+
+button {
+  display: block;
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background: 0 0;
+  border: solid 1px #d1cac7;
+  font-family: inherit;
+  font-size: inherit;
+  color: currentColor;
+  border-radius: 2px;
+  line-height: 38px;
+  padding: 0 8px;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+}

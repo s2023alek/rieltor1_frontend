@@ -1,0 +1,24 @@
+
+.description-props__wrapper {
+    padding: 0 40px;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.description-props {
+    display: flex;
+    margin: 0 -40px;
+}
+
+
+.description-props__column {
+    padding: 0 40px;
+    width: 50%;
+}
+
+dl.description-props__item {
+    display: flex;
+    border-bottom: dotted 1px #ddd8d5;
+    line-height: 40px;
+    justify-content: space-between;
+}

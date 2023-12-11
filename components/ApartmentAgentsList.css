@@ -1,0 +1,92 @@
+
+/* агенты */
+.catalog-detail-agents {
+    padding-top: 1rem;
+}
+
+.catalog-detail-agents__item {
+    height: 130px;
+    border-radius: 3px;
+    display: flex;
+}
+
+.catalog-detail-agents__media {
+    height: 100%;
+    border-radius: 3px;
+    width: 96px;
+    min-width: 96px;
+}
+
+.catalog-detail-agents__media > img {
+    object-fit: cover;
+}
+
+.catalog-detail-agents__detail {
+    padding-left: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.catalog-detail-agents__link {
+    font-size: 16px;
+    line-height: 1.25;
+    display: block;
+    font-weight: 600;
+}
+
+.catalog-detail-agents__work-position {
+    padding-top: 2px;
+    font-size: 11px;
+    line-height: 1.25;
+    display: block;
+}
+
+.catalog-detail-agents__btm {
+    margin-top: 12px;
+    display: grid;
+    grid-gap: 4px;
+    margin-left: 0;
+}
+
+.catalog-detail-agents__agent-action-buttons {
+    display: inline-grid;
+    grid-template-columns: repeat(3, min-content);
+    grid-column-gap: 4px;
+}
+
+/* кнопки связи с агентом */
+
+.catalog-detail-agents button {
+    font-size: 13px;
+    line-height: 30px;
+}
+
+.catalog-detail-agents__agent-action-button--message {
+    background: #F4F2F1;
+    color: #8c7b73;
+}
+
+.catalog-detail-agents__agent-action-button {
+    width: 32px;
+    height: 32px;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.catalog-detail-agents__agent-action-button--whatsapp {
+    background: #25D366;
+    color: #FFF;
+}
+
+.catalog-detail-agents__agent-action-button--phone {
+    background: #F26E27;
+    color: #FFF;
+}

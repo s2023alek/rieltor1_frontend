@@ -1,0 +1,114 @@
+
+/* юридическая информация*/
+.detail-similar-block #legal-services {
+    margin: 0 -.5rem;
+}
+#legal-services {
+    display: flex;
+}
+
+.legal-services__item {
+    display: block;
+}
+
+.legal-services__title {
+    padding: 1rem;
+    border-bottom: solid 1px #ddd8d6;
+}
+
+.detail-similar-block #legal-services {
+    margin: 0 -.5rem;
+}
+
+.legal-services__main {
+    width: 66.66667%;
+    padding: 0 .5rem;
+}
+
+.detail-similar-block li.legal-services__item {
+    border-right: none;
+}
+.legal-services__item:first-child {
+    border-radius: 2px 2px 0 0;
+}
+.detail-similar-block .legal-services__item {
+    border: 0;
+}
+.legal-services__item {
+    padding: 1rem;
+    border: solid 1px #ddd8d5;
+}
+
+.legal-services-path li {
+    display: inline-block;
+    padding: 0 .5rem;
+    border-radius: 2px;
+    margin-right: .25rem;
+    margin-bottom: .25rem;
+    background-color: #f4f2f1;
+}
+
+.legal-services__item-title {
+    font-size: 1.2rem;
+}
+
+.legal-services-doc {
+    margin-top: 1rem;
+}
+
+.legal-services-doc__item {
+    padding-left: 1rem;
+    position: relative;
+    font-size: .8rem;
+    line-height: 1.14;
+}
+
+.legal-services-doc__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: .4rem;
+    width: 6px;
+    height: 6px;
+    background: #f06419;
+    border-radius: 3px;
+    transform: translate(0,-50%);
+}
+
+.detail-similar-block .legal-services__item + .legal-services__item {
+    border-top: solid 1px #ddd8d6;
+}
+.detail-similar-block li.legal-services__item {
+    border-right: none;
+}
+.legal-services__item + .legal-services__item {
+    margin-top: -1px;
+}
+
+.legal-services__desc {
+    padding: 1rem 1rem 1rem 3.5rem;
+    color: #e95d0f;
+    font-weight: 600;
+    border: dashed 1px #e95d0f;
+    border-radius: 4px;
+    letter-spacing: .02em;
+    position: relative;
+}
+.legal-services__desc {
+    font-size: .9rem;
+    line-height: 1.14;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+.legal-services__desc::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjMuNzg3IDIxLjEwM2wtMTAtMTkuOTk3QTEuOTg1IDEuOTg1IDAgMCAwIDExLjk5OSAwYy0uNzY2IDAtMS40NS40MjUtMS43ODggMS4xMDZsLTEwIDE5Ljk5N0EyLjAwMiAyLjAwMiAwIDAgMCAxLjk5OCAyNGgyMGEyLjAwMiAyLjAwMiAwIDAgMCAxLjc4Ny0yLjg5N3pNMiAyMkwxMiAybDEwIDIwSDJ6bTIwIDBzLjAwMyAwIDAgMGMuMDAzIDAgMCAwIDAgMHoiIGZpbGw9IiNlOTVkMGYiIC8+PHBhdGggZD0iTTExLjU1MyA1LjEyOEwzLjk4MSAyMC4yNzVhLjUuNSAwIDAgMCAuNDQ3LjcyNEg5di0xSDUuMjM4TDEyIDYuNDcxbDYuNzYyIDEzLjUyOEgxNXYxaDQuNTcyYS41LjUgMCAwIDAgLjQ0Ny0uNzI0TDEyLjQ0NyA1LjEyOGEuNS41IDAgMCAwLS44OTQgMHoiIGZpbGw9IiNlOTVkMGYiIC8+PHBhdGggZD0iTTExIDExaDJ2N2gtMnYtN3pNMTEgMTloMnYyaC0ydi0yeiIgZmlsbD0iI2U5NWQwZiIgLz48L3N2Zz4=);
+    background-size: 1.5rem;
+    transform: translate(0,-50%);
+}

@@ -1,0 +1,130 @@
+
+.catalog-detail-aside {
+    height: 606px;
+    flex-direction: column;
+}
+
+.catalog-detail-aside {
+    display: flex;
+}
+
+
+.catalog-detail-props__top {
+    margin-bottom: 8px;
+    padding: 24px;
+    border-radius: 8px;
+    background: #ffff;
+    box-shadow: 0 4px 24px #ddd8d5;
+}
+
+.catalog-detail-props__top-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.catalog-detail-props__actions {
+    display: flex;
+}
+
+.catalog-detail-props__action-favorite {
+    background: #F26E27;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.catalog-detail-props__action-favorite > img {
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+}
+
+/*стоимость*/
+.catalog-detail-props__top-price-title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    padding-bottom: 4px;
+}
+
+.catalog-detail-props .value {
+    font-weight: 700;
+}
+
+#currency-target-value {
+    font-size: 32px;
+}
+
+.catalog-detail-props__top-price .unit {
+    font-weight: 600;
+}
+
+.catalog-detail-props__top-price .unit .unit-change {
+    display: inline-block;
+    padding: 0 .25rem;
+    border-radius: 3px;
+    font-size: 18px;
+    line-height: 28px;
+    cursor: pointer;
+}
+
+/*цена м2 */
+.catalog-detail-props .value {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.catalog-detail-props__top-price-alt .unit {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/* цена в ипотеку */
+.catalog-detail-props__top-mortgage {
+    font-size: 14px;
+    padding-top: 8px;
+    line-height: 1;
+    position: relative;
+}
+
+.catalog-detail-props__top-mortgage a {
+    font-weight: 600;
+    display: inline-block;
+    border-bottom: dotted 1px;
+}
+
+.catalog-detail-props__top-mortgage a {
+    font-weight: 600;
+    display: inline-block;
+    border-bottom: dotted 1px;
+}
+
+/*Заказать показ*/
+.catalog-detail-props__top-block .catalog-detail-props__top-block-callback {
+    margin: 20px 0 0;
+}
+
+.catalog-detail-props__callback {
+    color: #fff;
+    background: #f26e27;
+    border: 0;
+    transition: .2s;
+    font-weight: 600;
+    border-radius: 3px;
+    letter-spacing: .021em;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+button.catalog-detail-props__online-callback {
+    white-space: nowrap;
+    margin-top: 8px;
+    border: 0;
+    background: #69bae6;
+    font-weight: 600;
+    color: #fff;
+    font-size: 15px;
+}

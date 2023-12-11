@@ -1,0 +1,30 @@
+
+.catalog-detail-location {
+    display: flex;
+    font-size: 16px;
+    padding-bottom: .5rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.catalog-detail-location__item::before {
+    content: ',';
+    padding: 0 .5rem 0 0;
+    color: initial;
+    opacity: .75;
+    text-decoration: none;
+}
+
+.catalog-detail-location__item-first::before {
+    content: '';
+}
+
+.catalog-detail-location__part {
+    display: flex;
+}
+
+.catalog-detail-location__aside-part {
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 12px;
+}

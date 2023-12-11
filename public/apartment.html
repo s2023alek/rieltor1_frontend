@@ -1,0 +1,394 @@
+<html>
+<head>
+    <link rel="stylesheet" href="apartmentStyle.css">
+    <script type="text/javascript" src="jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" async="" src="apartment.js"></script>
+</head>
+<body>
+
+<div class="main">
+    <div class="detail">
+        <div class="cr">
+            <div class="detail__header">
+                <div class="detail__id" data-id="0"></div>
+                <h1 class="detail__title">Недорогая квартира у моря 25 м²</h1>
+            </div>
+        </div>
+
+        <div class="cr">
+
+            <!-- адрес -->
+            <div class="catalog-detail-location">
+                <div class="catalog-detail-location__part">
+                    <img src="location.svg">
+                    <div class="catalog-detail-location__item catalog-detail-location__item-first">Мамайка</div>
+                    <div class="catalog-detail-location__item">Фадеева</div>
+                    <div class="catalog-detail-location__item catalog-detail-location__show-on-map">
+                        <a class="catalog-detail-location__link" href="#detail-map">на карте</a>
+                    </div>
+                </div>
+
+                <div class="catalog-detail-location__part catalog-detail-location__aside-part">
+                    <span class="catalog-detail-location__update">Обновлено: декабрь 2023</span>
+                </div>
+            </div>
+
+            <!-- галерея изображение -->
+            <div class="catalog-element-media">
+                <div id="catalog-element-media" class="catalog-element-media__preview" data-index="1 / 4">
+                    <div class="catalog-element-media__preview-picture-container">
+                        <picture>
+                            <img id="apartment-photo"
+                                 src="http://localhost:8080/uploads/1701598250_2cc8647fc11f8c538525.jpg">
+                        </picture>
+                    </div>
+
+                    <button class="catalog-element-media-controls catalog-element-media__resize">
+                        Увеличить фото
+                    </button>
+
+                    <button class="catalog-element-media-controls catalog-element-media__slider-control prev catalog-element-media-prev">
+                        &larr;
+                    </button>
+
+                    <button class="catalog-element-media-controls catalog-element-media__slider-control next catalog-element-media-next">
+                        &rarr;
+                    </button>
+                </div>
+
+                <!-- галерея список изображений -->
+                <div class="catalog-element-media__thumbs">
+                    <div class="catalog-element-media__thumbs-layout" id="catalog-element-media-thumbs-container">
+                        <div class="catalog-element-media__thumbs-scroll" id="catalog-element-media-thumbs-scroll"
+                             style="left: 0px;">
+
+                            <div class="catalog-element-media__thumb active">
+                                <picture class="catalog-element-media__thumb-picture">
+                                    <img src="http://localhost:8080/uploads/1701598250_2cc8647fc11f8c538525.jpg"
+                                         class="catalog-element-media__thumb-image">
+                                </picture>
+                            </div>
+
+                            <div class="catalog-element-media__thumb">
+                                <picture class="catalog-element-media__thumb-picture">
+                                    <img src="http://localhost:8080/uploads/1701598257_900913cbe45f5525e05c.jpg"
+                                         class="catalog-element-media__thumb-image">
+                                </picture>
+                            </div>
+
+                            <div class="catalog-element-media__thumb">
+                                <picture class="catalog-element-media__thumb-picture">
+                                    <img src="http://localhost:8080/uploads/1701598261_fa17b84e1336b926cbf7.jpg"
+                                         class="catalog-element-media__thumb-image">
+                                </picture>
+                            </div>
+
+                            <div class="catalog-element-media__thumb">
+                                <picture class="catalog-element-media__thumb-picture">
+                                    <img src="http://localhost:8080/uploads/1701598267_ca90b276b0fdd49193f7.jpg"
+                                         class="catalog-element-media__thumb-image">
+                                </picture>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="catalog-element-media__plan" data-count="1">
+                        <img src="/local/img/flat-plan.png">
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- цена и агенты -->
+            <div class="c3 catalog-detail-aside">
+
+                <!-- цена -->
+                <div class="catalog-detail-props">
+                    <div class="catalog-detail-props__top">
+                        <div class="catalog-detail-props__top-header">
+                            <div class="catalog-detail-props__actions">
+                                <div class="catalog-detail-props__action-favorite"
+                                     data-tippy-content="Добавить в избранное">
+                                    <img src="fav.png">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="catalog-detail-props__top-block">
+
+                            <div class="catalog-detail-props__top-price">
+                                <div class="catalog-detail-props__top-price-title">Цена</div>
+                                <span class="value" id="currency-target-value">5&nbsp;950&nbsp;000</span>
+                                <span class="unit">
+						        <span class="unit-change">₽</span>
+					        </span>
+                            </div>
+                            <div class="catalog-detail-props__top-price-alt">
+                                <span class="value" id="currency-target-value-alt">238&nbsp;000</span>
+                                <span class="unit" id="currency-target-value-alt-unit">₽ за м²</span>
+                            </div>
+                            <div class="catalog-detail-props__top-mortgage">В ипотеку от <a href="javascript:nothing()">29&nbsp;702₽</a>
+                                в месяц
+                            </div>
+                        </div>
+
+                        <div class="catalog-detail-props__top-block catalog-detail-props__top-block-callback">
+                            <button class="catalog-detail-props__callback" id="catalog-detail-props-callback-order">
+                                Заказать показ
+                            </button>
+                            <button class="catalog-detail-props__online-callback"
+                                    id="catalog-detail-props-callback-online">
+                                ONLINE консультация
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- агенты -->
+
+                <div class="catalog-detail-agents catalog-detail-agents--default" id="catalog-detail-agents">
+                    <div class="catalog-detail-agents__item">
+                        <a href="/agents/1" class="catalog-detail-agents__media"
+                           rel="nofollow">
+                            <img src="http://localhost:8080/uploads/1701598276_5e5bbf2784c97e500920.jpg"
+                                 alt="Антон Скутин" class="catalog-detail-agents__media">
+                        </a>
+                        <div class="catalog-detail-agents__detail">
+                            <div class="catalog-detail-agents__top">
+                                <a class="catalog-detail-agents__link" href="/agents/1"
+                                   rel="nofollow">Антон Скутин</a>
+                                <span class="catalog-detail-agents__work-position">Эксперт по недвижимости</span>
+                            </div>
+                            <div class="catalog-detail-agents__btm">
+
+                                <div class="catalog-detail-agents__agent-action-buttons">
+                                    <button class="catalog-detail-agents__agent-action-button catalog-detail-agents__agent-action-button--message js-catalog-detail-agents-callback-action"
+                                            data-manager-id="1411">
+                                        <img width="18px" height="18px" src="email.svg"/>
+                                    </button>
+
+                                    <a class="catalog-detail-agents__agent-action-button catalog-detail-agents__agent-action-button--whatsapp"
+                                       target="_blank" rel="nofollow"
+                                       href="https://api.whatsapp.com/send?phone=79882316187&amp;text=Здравствуйте,%20Антон.%20Я%20хочу%20узнать%20подробнее%20об%20объекте%20https://www.vincent-realty.ru/offers/apartments/ekonom/nedorogaya-kvartira-u-morya/">
+                                        <img src="whatsapp.svg" width="18px" height="18px">
+                                    </a>
+
+                                    <a data-tippy-content="+7 (988) 231-61-87" href="tel:+7 (988) 231-61-87"
+                                       class="catalog-detail-agents__agent-action-button catalog-detail-agents__agent-action-button--phone">
+                                        <img src="phone.svg" width="18px" height="18px">
+                                    </a>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Свойства объекта -->
+            <div class="description-props__wrapper desc">
+                <div class="description-props">
+                    <div class="description-props__column">
+                        <dl class="description-props__item">
+                            <dt class="description-prop__name">Кол-во комнат</dt>
+                            <dd class="description-prop__value">Студия</dd>
+                        </dl>
+                        <dl class="description-props__item">
+                            <dt class="description-prop__name">Общая площадь</dt>
+                            <dd class="description-prop__value">25&nbsp;м²</dd>
+                        </dl>
+                        <dl class="description-props__item">
+                            <dt class="description-prop__name">Цена</dt>
+                            <dd class="description-prop__value">5&nbsp;950&nbsp;000&nbsp;руб.</dd>
+                        </dl>
+                        <dl class="description-props__item">
+                            <dt class="description-prop__name">Цена за м²</dt>
+                            <dd class="description-prop__value">238&nbsp;000&nbsp;₽</dd>
+                        </dl>
+                        <dl class="description-props__item">
+                            <dt class="description-prop__name">Этаж</dt>
+                            <dd class="description-prop__value">3&nbsp;<span class="fwn">из&nbsp;4</span></dd>
+                        </dl>
+                        <dl class="description-props__item">
+                            <dt class="description-prop__name">Статус</dt>
+                            <dd class="description-prop__value">Жилое помещение</dd>
+                        </dl>
+                    </div>
+                    <div class="description-props__column">
+                        <dl class="description-props__item">
+                            <dt class="description-prop__name">Микрорайон</dt>
+                            <dd class="description-prop__value"><a href="/offers/kvartiry-v-sochi/mamayka/"
+                                                                   title="Мамайка">Мамайка</a></dd>
+                        </dl>
+                        <dl class="description-props__item">
+                            <dt class="description-prop__name">Улица</dt>
+                            <dd class="description-prop__value">Фадеева</dd>
+                        </dl>
+                        <dl class="description-props__item">
+                            <dt class="description-prop__name">До моря</dt>
+                            <dd class="description-prop__value">400&nbsp;м</dd>
+                        </dl>
+                        <dl class="description-props__item">
+                            <dt class="description-prop__name">Вид из окон</dt>
+                            <dd class="description-prop__value">Вид на горы</dd>
+                        </dl>
+                        <dl class="description-props__item">
+                            <dt class="description-prop__name">Ремонт</dt>
+                            <dd class="description-prop__value">Евроремонт</dd>
+                        </dl>
+                        <dl class="description-props__item">
+                            <dt class="description-prop__name">Санузел</dt>
+                            <dd class="description-prop__value">Совмещенный</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Табы описание, на карте, юр инфо, похожие -->
+            <div class="detail__tabs">
+                <div class="detail__tabs tabs">
+                    <div class="tabs__layout">
+
+                        <!-- Кнопки -->
+                        <ul class="tabs__list" data-tab="">
+                            <li class="tabs__list-item">
+                                <a data-target="detail-description" class="tabs__list-toggle tabs__list-toggle--text active">Описание</a>
+                            </li>
+                            <li class="tabs__list-item">
+                                <a data-target="detail-similar" class="tabs__list-toggle tabs__list-toggle--similar">Похожие</a>
+                            </li>
+                            <li class="tabs__list-item">
+                                <a data-target="legal-services_" class="tabs__list-toggle tabs__list-toggle--legal-services">Юр.информация</a>
+                            </li>
+                            <li class="tabs__list-item">
+                                <a data-target="detail-map" class="tabs__list-toggle tabs__list-toggle--map">Карта</a>
+                            </li>
+                        </ul>
+
+                        <!--Табы описание, на карте, юр инфо, похожие -->
+                        <div class="tabs__blocks">
+
+                            <!-- таб описание -->
+                            <div id="detail-description" class="tabs__item show">
+                                <div class="detail-description-block">Находитесь в поиске недорогой уютной студии в
+                                    Сочи? В таком случае наше предложение имеет все шансы стать для Вас идеальным
+                                    вариантом! Специалисты компании «Винсент Недвижимость» представляют Вашему вниманию
+                                    один из самых «горячих» объектов по супервыгодной цене – очень компактную и
+                                    функциональную квартиру-студию, расположенную в новом жилом доме по ул. Фадеева.
+                                </div>
+                            </div>
+
+                            <!-- таб юридическая информация -->
+                            <div class="tabs__item detail-similar-block js-legal-services" id="legal-services_" data-ib="6" data-a="0" data-title="Юридическая информация">
+                                <div class="legal-services__title">
+                                    <h3>Недорогая квартира у моря: варианты приобретения</h3>
+                                </div>
+
+                                <div id="legal-services" class="legal-services">
+                                    <div class="legal-services__main">
+                                        <ul class="legal-services__list">
+
+                                            <li class="legal-services__item">
+
+                                                <ul class="legal-services-path">
+                                                    <li class="legal-services-path__item">Резидент РФ</li>
+                                                    <li class="legal-services-path__item">Купля</li>
+                                                    <li class="legal-services-path__item">Квартира</li>
+                                                    <li class="legal-services-path__item">Вторичная</li>
+                                                    <li class="legal-services-path__item">Наличный расчет</li>
+                                                </ul>
+
+                                                <h4 class="legal-services__item-title">Купить квартиру ( вторичное жильё
+                                                    )</h4>
+
+                                                <ul class="legal-services-doc">
+                                                    <li class="legal-services-doc__item">
+                                                        <div class="legal-services-doc__name">Паспорт</div>
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+
+
+                                            <li class="legal-services__item">
+
+                                                <ul class="legal-services-path">
+                                                    <li class="legal-services-path__item">Иностранец</li>
+                                                    <li class="legal-services-path__item">Купля</li>
+                                                    <li class="legal-services-path__item">по долям</li>
+                                                    <li class="legal-services-path__item">Квартира</li>
+                                                    <li class="legal-services-path__item">Вторичная</li>
+                                                    <li class="legal-services-path__item">Материнский капитал</li>
+                                                </ul>
+                                                <h4 class="legal-services__item-title">Купить квартиру ( вторичное жильё
+                                                    ) по долям не резиденту РФ под
+                                                    материнский капитал</h4>
+
+                                                <div class="legal-services__desc">Невозможна покупка, если
+                                                    нерезидентом является мать.<br>
+                                                    Возможна покупка, если нерезидентом является отец.<br>
+                                                </div>
+
+                                                <ul class="legal-services-doc">
+                                                    <li class="legal-services-doc__item">
+                                                        <div class="legal-services-doc__name">Паспорта всех членов
+                                                            семьи
+                                                        </div>
+                                                    </li>
+                                                    <li class="legal-services-doc__item">
+                                                        <div class="legal-services-doc__name">Свидетельства о
+                                                            рождении всех детей
+                                                        </div>
+                                                    </li>
+                                                    <li class="legal-services-doc__item">
+                                                        <div class="legal-services-doc__name">Сертификат на
+                                                            материнский (семейный) капитал
+                                                        </div>
+                                                    </li>
+                                                    <li class="legal-services-doc__item">
+                                                        <div class="legal-services-doc__name">Справка об остатке
+                                                            средств на счете из пенсионного фонда по материнскому
+                                                            капиталу
+                                                        </div>
+                                                    </li>
+                                                </ul>
+
+                                            </li>
+
+
+                                        </ul>
+                                    </div>
+
+                                    <div class="legal-services__aside" id="legal-services--filter">
+                                        <div class="collapse" id="collapse:legal-services--collapse:filter">
+                                            <div class="collapse__header"><span>Фильтр</span></div>
+                                            <div class="collapse__body">
+                                                <div class="filter__title"><span>Гражданство</span></div>
+                                                <div class="segment">
+                                                    <button class="segment__item first">Резидент РФ</button>
+                                                    <button class="segment__item last">Нерезидент РФ</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+
+/* Табы описание, на карте, юр инфо, похожие */
+
+.detail__tabs {
+    position: relative;
+    z-index: 4;
+}
+
+.detail .detail__tabs {
+    padding-top: 24px;
+    margin-bottom: 16px;
+}
+
+.tabs__blocks {
+    clear:both;
+}
+
+.detail .tabs .tabs__list {
+    padding-bottom: 12px;
+    float: left;
+    position: relative;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.detail .tabs .tabs__list-item:not(:last-child) {
+    margin-right: -1px;
+}
+
+.detail .tabs .tabs__list-item {
+    float: left;
+}
+
+
+.detail .tabs .tabs__list-item:first-child .tabs__list-toggle {
+    border-radius: 2px 0 0 2px;
+}
+
+.detail .tabs .tabs__list-toggle.active {
+    position: relative;
+    z-index: 1;
+    background-color: #f4f2f1;
+}
+
+.detail .tabs .tabs__list-toggle {
+    font-size: 1rem;
+    color: inherit;
+    display: block;
+    line-height: 38px;
+    padding: 0 16px 0 40px;
+    border: solid 1px #d1cac7;
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.detail .tabs .tabs__item.show {
+    visibility: visible;
+    overflow: visible;
+    height: auto;
+    opacity: 1;
+    transform: translateY(0);
+    border: solid 1px #ddd8d5;
+}
+
+.detail .tabs .tabs__item {
+    visibility: hidden;
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: transform .2s ease-out, opacity .4s ease-out;
+    opacity: 0;
+    transform: translateY(20px);
+    border-radius: 2px;
+}
+
+.detail .tabs .tabs__item.show > * {
+    position: static;
+}
