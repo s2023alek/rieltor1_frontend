@@ -8,8 +8,6 @@ import {endpoint} from '@/utils/utils'
 function prepareButtons() {
     //галерея
     $('.catalog-element-media__thumb').on("click", imageOnClick)
-    $('.catalog-element-media-next').on("click", nextImageOnClick)
-    $('.catalog-element-media-prev').on("click", prevImageOnClick)
 }
 
 function imageOnClick() {
@@ -76,11 +74,11 @@ export const ApartmentGallery = ({imagesList}) => {
                     Увеличить фото
                 </button>
 
-                <button className="catalog-element-media-controls catalog-element-media__slider-control prev catalog-element-media-prev">
+                <button className="catalog-element-media-controls catalog-element-media__slider-control prev catalog-element-media-prev" onClick={()=>{prevImageOnClick()}}>
                     &larr;
                 </button>
 
-                <button className="catalog-element-media-controls catalog-element-media__slider-control next catalog-element-media-next">
+                <button className="catalog-element-media-controls catalog-element-media__slider-control next catalog-element-media-next" onClick={()=>{nextImageOnClick()}}>
                     &rarr;
                 </button>
             </div>
@@ -90,8 +88,10 @@ export const ApartmentGallery = ({imagesList}) => {
                     <div className="catalog-element-media__thumbs-scroll" id="catalog-element-media-thumbs-scroll">
 
                         {imagesList.map(item => {
+                            let imageId = imagesList.indexOf(item)
+
                             return (
-                                <div className="catalog-element-media__thumb">
+                                <div className="catalog-element-media__thumb" key={imageId} onClick={()=>{imageOnClick(imageId, this)}}>
                                     <picture className="catalog-element-media__thumb-picture">
                                         <img src={photosPath + item} className="catalog-element-media__thumb-image"/>
                                     </picture>
