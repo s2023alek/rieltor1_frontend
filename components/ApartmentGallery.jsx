@@ -1,64 +1,32 @@
 "use client"
 
 import "./ApartmentGallery.css"
-import $ from 'jquery';
-import {useEffect} from "react";
+import {useState} from "react";
 import {endpoint} from '@/utils/utils'
 
-function prepareButtons() {
-    //галерея
-    $('.catalog-element-media__thumb').on("click", imageOnClick)
-}
-
-function imageOnClick() {
-    $('.catalog-element-media__thumb').removeClass('active')
-    $(this).addClass('active')
-    let thisImgSrc = $(this).find('img').attr('src')
-    $('#apartment-photo').attr('src', thisImgSrc)
-}
-
-function nextImageOnClick() {
-    let last = $('.catalog-element-media__thumb.active')
-    last.removeClass('active')
-    let current = last.next()
-
-    if (current.length<1) {
-        current = $( "#catalog-element-media-thumbs-scroll .catalog-element-media__thumb:first-child" )
-    }
-
-    current.addClass('active')
-
-    let thisImgSrc = current.find('img').attr('src')
-    $('#apartment-photo').attr('src', thisImgSrc)
-}
-
-function prevImageOnClick() {
-    let last = $('.catalog-element-media__thumb.active')
-    last.removeClass('active')
-    let current = last.prev()
-
-    if (current.length<1) {
-        current = $( "#catalog-element-media-thumbs-scroll .catalog-element-media__thumb:last-child" )
-    }
-
-    current.addClass('active')
-
-    let thisImgSrc = current.find('img').attr('src')
-    $('#apartment-photo').attr('src', thisImgSrc)
-}
 
 export const ApartmentGallery = ({imagesList}) => {
-    let photosPath = endpoint+"/uploads/"
+    const [currentPhotoSN, setCurrentPhotoSN] = useState(0);
+    const totalImages = imagesList.length
 
-    let firstImage = photosPath + imagesList[0]
+    const nextImage = () => {
+        setCurrentPhotoSN(
+            ((currentPhotoSN + 1) >= totalImages) ? 0 : currentPhotoSN + 1
+        )
+    }
+    const prevImage = () => {
+        setCurrentPhotoSN(
+            ((currentPhotoSN - 1) < 0) ? totalImages - 1 : currentPhotoSN - 1
+        )
+    }
 
-    useEffect(() => {
-        $(function () {
-            prepareButtons()
-        });
-    }, []);
+    const selectImage = (sn) => {
+        setCurrentPhotoSN(sn)
+    }
 
+    let photosPath = endpoint + "/uploads/"
 
+    let currentImage = photosPath + imagesList[currentPhotoSN]
 
     return (
 
@@ -66,7 +34,7 @@ export const ApartmentGallery = ({imagesList}) => {
             <div id="catalog-element-media" className="catalog-element-media__preview" data-index="1 / 4">
                 <div className="catalog-element-media__preview-picture-container">
                     <picture>
-                        <img id="apartment-photo" src={firstImage}/>
+                        <img id="apartment-photo" src={currentImage}/>
                     </picture>
                 </div>
 
@@ -74,11 +42,11 @@ export const ApartmentGallery = ({imagesList}) => {
                     Увеличить фото
                 </button>
 
-                <button className="catalog-element-media-controls catalog-element-media__slider-control prev catalog-element-media-prev" onClick={()=>{prevImageOnClick()}}>
+                <button className="catalog-element-media-controls catalog-element-media__slider-control prev catalog-element-media-prev" onClick={prevImage}>
                     &larr;
                 </button>
 
-                <button className="catalog-element-media-controls catalog-element-media__slider-control next catalog-element-media-next" onClick={()=>{nextImageOnClick()}}>
+                <button className="catalog-element-media-controls catalog-element-media__slider-control next catalog-element-media-next" onClick={nextImage}>
                     &rarr;
                 </button>
             </div>
@@ -91,7 +59,9 @@ export const ApartmentGallery = ({imagesList}) => {
                             let imageId = imagesList.indexOf(item)
 
                             return (
-                                <div className="catalog-element-media__thumb" key={imageId} onClick={()=>{imageOnClick(imageId, this)}}>
+                                <div className={"catalog-element-media__thumb " + ((currentPhotoSN === imageId) ? "active" : "")} sn={imageId} onClick={() => {
+                                    selectImage(imageId)
+                                }}>
                                     <picture className="catalog-element-media__thumb-picture">
                                         <img src={photosPath + item} className="catalog-element-media__thumb-image"/>
                                     </picture>
@@ -102,9 +72,11 @@ export const ApartmentGallery = ({imagesList}) => {
                     </div>
                 </div>
 
-                <div className="catalog-element-media__plan" data-count="1">
-                    <img src="/local/img/flat-plan.png"/>
+
+                <div className="catalog-element-media__plan" data-count="0">
+                    <img src="/flat-plan.png"/>
                 </div>
+
 
             </div>
         </div>

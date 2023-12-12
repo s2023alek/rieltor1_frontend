@@ -1,8 +1,8 @@
 "use client"
 
 import './ApartmentDetailsTabs.css'
-import $ from 'jquery';
-import {useEffect, useState} from "react";
+
+import {useState} from "react";
 import {ApartmentDescriptionTab} from "@/components/ApartmentDescriptionTab";
 import {ApartmentLegalInfoTab} from "@/components/ApartmentLegalInfoTab";
 

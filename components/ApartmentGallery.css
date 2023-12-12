@@ -1,5 +1,5 @@
 #catalog-element-media-thumbs-scroll {
-    left: 0px;
+    left: 0;
 }
 
 
@@ -90,6 +90,7 @@
     margin-top: 4px;
 }
 
+/* количество планов квартиры */
 .catalog-element-media__thumbs-layout {
     height: 84px;
     overflow: hidden;
@@ -98,8 +99,44 @@
     border-radius: 3px;
 }
 
+.catalog-element-media__plan[data-count]::before {
+    content: attr(data-count);
+    position: absolute;
+    right: -2px;
+    top: -2px;
+    background: #e95c0f;
+    z-index: 10;
+    color: #fff;
+    font-size: 12px;
+    padding: 0 6px;
+    border-radius: 0 3px 0 3px;
+    font-weight: 600;
+    box-shadow: 0 0 0 3px #fff;
+}
+
+.catalog-element-media__plan {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    min-height: 80px;
+    margin-left: 4px;
+    border-radius: 3px;
+    border: dashed 1px #d1cac6;
+    position: relative;
+    cursor: pointer;
+}
+
+.catalog-element-media__plan img {
+    max-width: 90%;
+    max-height: 90%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
 #catalog-element-media__thumbs-scroll {
-    left: 0px;
+    left: 0;
 }
 
 .catalog-element-media__thumbs-scroll {
