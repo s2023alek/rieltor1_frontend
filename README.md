@@ -4,9 +4,13 @@ http://localhost:3000/apartment/1
 http://localhost:3000/agent/1
 ```
 список интерактива кот работает на странице:
-- галерея
+- галерея (переключение изображений, выбор изображения)
 - табы(описание квартиры, юридическая информация)
 - кнопки агента(позвонить вотсап)
+
+список интерактива кот не работает на странице:
+- увеличение фото
+- кнопка оправить сообщение агенту
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
