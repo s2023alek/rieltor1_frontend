@@ -1,0 +1,168 @@
+.h1, h1 {
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.link, a {
+    text-decoration: none;
+}
+
+.cr {
+    margin: 0 auto;
+    width: 1170px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+button {
+    display: block;
+    width: 100%;
+    appearance: none;
+    background: 0 0;
+    border: solid 1px #d1cac7;
+    font-family: inherit;
+    font-size: inherit;
+    color: currentColor;
+    border-radius: 2px;
+    line-height: 38px;
+    padding: 0 8px;
+    text-align: center;
+    cursor: pointer;
+    outline: 0;
+}
+
+.user-detail__header {
+    position: relative;
+    top: 0;
+    z-index: 5;
+}
+
+.user-detail-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 0 0 2px 2px;
+    height: 50%;
+    z-index: 1;
+    background: #f8f7f6;
+}
+
+.cf::after, .cf::before {
+    content: '';
+    display: table;
+    width: 100%;
+    clear: both;
+}
+
+.user-detail-card__layout {
+    padding: 16px;
+    position: relative;
+    z-index: 2;
+}
+
+.user-detail-card__photo {
+    border-radius: 2px;
+    border: solid 2px #fff;
+    border-top-color: rgb(255, 255, 255);
+    float: left;
+    width: 184px;
+    height: 242px;
+}
+
+/*имя телефон - верхняя часть карточки*/
+.user-detail-card__detail {
+    float: left;
+    padding-left: 16px;
+}
+
+.user-detail-card__name h1 {
+    height: auto;
+    line-height: 1;
+}
+
+
+.user-detail-card__work-position {
+    max-width: 100%;
+}
+
+.user-detail-card__work-position {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.user-detail-card__buttons {
+    margin-top: 12px;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr min-content;
+    grid-gap: 6px;
+}
+
+.user-detail-card__button {
+    border-radius: 3px;
+    width: auto !important;
+    font-weight: 500;
+    margin: 0 !important;
+    float: left;
+    padding: 0 16px;
+}
+
+.user-detail-card__whatsapp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #25D366;
+    color: #FFF;
+    width: 40px;
+    border-radius: 3px;
+}
+
+/* нижняя часть карточки */
+.user-detail-card__stat {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    top: calc(50% + 12px);
+    left: 216px;
+}
+
+.user-detail-card__spec-title {
+    margin-bottom: 8px;
+    width: 2px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 9999px;
+}
+
+.user-detail-card__spec {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: .8rem;
+    color: #fff;
+    line-height: 21px;
+    list-style: none;
+}
+
+.user-detail-card__spec li.main-spec {
+    background-color: #e95d0f;
+}
+
+.user-detail-card__spec li {
+    float: left;
+    border-radius: 12px;
+    padding: 0 8px;
+    margin-left: 5px;
+}
+
+.user-detail-card__group {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.user-detail-card__group li {
+    float: left;
+    width: 50%;
+    padding: 0 8px;
+}

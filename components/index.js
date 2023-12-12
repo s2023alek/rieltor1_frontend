@@ -8,3 +8,5 @@ export { ApartmentProperties } from './ApartmentProperties'
 export { ApartmentDetailsTabs } from './ApartmentDetailsTabs'
 export { ApartmentDescriptionTab } from './ApartmentDescriptionTab'
 export { ApartmentLegalInfoTab } from './ApartmentLegalInfoTab'
+
+export { AgentDetail } from './AgentDetail'

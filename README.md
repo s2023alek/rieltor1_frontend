@@ -1,3 +1,13 @@
+для проверки:
+```bash
+http://localhost:3000/apartment/1
+http://localhost:3000/agent/1
+```
+список интерактива кот работает на странице:
+- галерея
+- табы(описание квартиры, юридическая информация)
+- кнопки агента(позвонить вотсап)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

@@ -5,9 +5,7 @@ import {
     ApartmentPrice,
     ApartmentAgentsList,
     ApartmentProperties,
-    ApartmentDetailsTabs,
-    ApartmentDescriptionTab,
-    ApartmentLegalInfoTab
+    ApartmentDetailsTabs
 } from '@/components'
 
 import './styles.css'
@@ -18,8 +16,7 @@ export const metadata = {
     description: "Агенство недвижимости Сочи"
 }
 
-
-export default async function Page(params) {
+export default async function Page() {
     const res = await fetch('http://localhost:8080/apartment/1', {cache: "no-store"})
     //{id, title, num_of_rooms, area, price, price_sqm, level, levels, street, sea_distance, is_studio, latitude, longitude, description, mod_date, active, status, status2, microdistrict, viewFromWindow, renovationType, bathroomType, apartmentClass, photosList, legalInformationList:[{title,tags:[string],documents:[string],warnings:[string]}], agentsList:[{id,name,phone,role,photoPath}] }
 
@@ -27,6 +24,8 @@ export default async function Page(params) {
         throw new Error('Failed to fetch data')
     }
     const data = await res.json()
+
+
 
     return (
         <div className="main">
