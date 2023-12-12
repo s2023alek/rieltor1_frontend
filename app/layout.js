@@ -1,6 +1,5 @@
 import {Inter} from 'next/font/google'
 import './globals.css'
-import Script from 'next/script'
 
 const inter = Inter({subsets: ['latin']})
 
@@ -14,7 +13,6 @@ export default function RootLayout({children}) {
         <html lang="ru">
         <body className={inter.className}>
 
-        <Script src="/jquery-3.7.1.min.js" />
 
         <div id={'app'}>
             {children}

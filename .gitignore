@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#project
+./public/apartment.html
+./public/apartmentStyle.css
+./public/apartment.js
+./public/jquery-3.7.1.min.js
