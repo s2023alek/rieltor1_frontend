@@ -2,74 +2,52 @@
 
 import './ApartmentDetailsTabs.css'
 import $ from 'jquery';
-import {useEffect} from "react";
-
-function prepareButtons() {
-    //табы
-    $('.tabs__list-item').on("click", tabsOnClick)
-}
+import {useEffect, useState} from "react";
+import {ApartmentDescriptionTab} from "@/components/ApartmentDescriptionTab";
+import {ApartmentLegalInfoTab} from "@/components/ApartmentLegalInfoTab";
 
 
-function tabsOnClick() {
-    $('.tabs__item').removeClass('show')
-    $('.tabs__list-toggle').removeClass('active')
-    $(this).find('a').addClass('active')
+export const ApartmentDetailsTabs = ({className, description, legalInformationList}) => {
+    const [activeTab, setActiveTab] = useState("description");
 
-    switch ($(this).find('a').attr('data-target')) {
-        case 'detail-description':
-            $('#detail-description').addClass('show')
-            break
-
-        case 'legal-services_':
-            $('#legal-services_').addClass('show')
-            break
-    }
-}
-
-
-export const ApartmentDetailsTabs = ({
-                                         as: Element = 'div',
-                                         children,
-                                         className,
-                                         ...rest
-                                     }) => {
-
-    useEffect(() => {
-        $(function () {
-            prepareButtons()
-        });
-    }, []);
+    const handleTab1 = () => {
+        setActiveTab("description");
+    };
+    const handleTab2 = () => {
+        setActiveTab("legalInformation");
+    };
 
     return (
-        <Element {...rest} className={`${className}`}>
+        <div className={className}>
 
             <div className="detail__tabs tabs">
                 <div className="tabs__layout">
 
                     <ul className="tabs__list" data-tab="">
-                        <li className="tabs__list-item">
-                            <a data-target="detail-description" className="tabs__list-toggle tabs__list-toggle--text active">Описание</a>
+                        <li className="tabs__list-item" onClick={handleTab1}>
+                            <a data-target="detail-description" className={"tabs__list-toggle tabs__list-toggle--text "+((activeTab === 'description') ? "active" : "")}>Описание</a>
                         </li>
-                        <li className="tabs__list-item">
-                            <a data-target="detail-similar" className="tabs__list-toggle tabs__list-toggle--similar">Похожие</a>
-                        </li>
-                        <li className="tabs__list-item">
-                            <a data-target="legal-services_" className="tabs__list-toggle tabs__list-toggle--legal-services">Юр.информация</a>
-                        </li>
-                        <li className="tabs__list-item">
-                            <a data-target="detail-map" className="tabs__list-toggle tabs__list-toggle--map">Карта</a>
+                        <li className="tabs__list-item" onClick={handleTab2}>
+                            <a data-target="legal-services_" className={"tabs__list-toggle tabs__list-toggle--legal-services "+((activeTab === 'legalInformation') ? "active" : "")}>Юр.информация</a>
                         </li>
                     </ul>
 
                     <div className="tabs__blocks">
 
-                        {children}
+
+                        {activeTab === "description" &&
+                            <ApartmentDescriptionTab text={description}/>}
+
+                        {activeTab === "legalInformation" &&
+                            <ApartmentLegalInfoTab legalInformationList={legalInformationList}/>
+                        }
+
 
                     </div>
 
                 </div>
             </div>
 
-        </Element>
+        </div>
     )
 }

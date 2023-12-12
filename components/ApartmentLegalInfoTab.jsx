@@ -6,7 +6,7 @@ export const ApartmentLegalInfoTab = ({legalInformationList}) => {
 
     return (
 
-        <div className="tabs__item detail-similar-block" id="legal-services_">
+        <div className="tabs__item detail-similar-block show" id="legal-services_">
             <div className="legal-services__title">
                 <h3>Недорогая квартира у моря: варианты приобретения</h3>
             </div>

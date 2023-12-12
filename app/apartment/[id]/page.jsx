@@ -47,13 +47,8 @@ export default async function Page(params) {
 
                     <ApartmentProperties street={data.street} is_studio={data.is_studio} viewFromWindow={data.viewFromWindow} level={data.level} area={data.area} levels={data.levels} price={data.price} price_sqm={data.price_sqm} bathroomType={data.bathroomType} microdistrict={data.microdistrict} num_of_rooms={data.num_of_rooms} renovationType={data.renovationType} sea_distance={data.sea_distance} status={data.status}/>
 
-                    <ApartmentDetailsTabs className={'detail__tabs'}>
+                    <ApartmentDetailsTabs className={'detail__tabs'} description={data.description} legalInformationList={data.legalInformationList}/>
 
-                        <ApartmentDescriptionTab text={data.description}/>
-
-                        <ApartmentLegalInfoTab legalInformationList={data.legalInformationList}/>
-
-                    </ApartmentDetailsTabs>
 
 
                 </div>
