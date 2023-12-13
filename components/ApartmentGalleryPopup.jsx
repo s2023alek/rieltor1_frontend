@@ -28,9 +28,9 @@ export const ApartmentGalleryPopup = ({imagePathPrefix, imagesList, currentImage
     return (
 
         <div id="lightbox">
-            <button onClick={prevImage}>Пред</button>
+            <button onClick={prevImage}>Предыдущее</button>
             <img id="lightbox-img" src={currentImage} onClick={hideLightBoxButton}/>
-            <button onClick={nextImage}>След</button>
+            <button onClick={nextImage}>Следующее</button>
         </div>
 
     )
