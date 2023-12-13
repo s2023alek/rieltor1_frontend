@@ -3,10 +3,12 @@
 import "./ApartmentGallery.css"
 import {useState} from "react";
 import {endpoint} from '@/utils/utils'
+import {ApartmentGalleryPopup} from "@/components/ApartmentGalleryPopup";
 
 
 export const ApartmentGallery = ({imagesList}) => {
     const [currentPhotoSN, setCurrentPhotoSN] = useState(0);
+    const [bShowPopup, setBShowPopup] = useState(false);
     const totalImages = imagesList.length
 
     const nextImage = () => {
@@ -28,56 +30,69 @@ export const ApartmentGallery = ({imagesList}) => {
 
     let currentImage = photosPath + imagesList[currentPhotoSN]
 
+
+    const hidePopup = () => {
+        setBShowPopup(false)
+    }
+    const showPopup = () => {
+        setBShowPopup(true)
+    }
+
     return (
+        <div>
+            {bShowPopup &&
+                <ApartmentGalleryPopup imagesList={imagesList} currentImageIndex={currentPhotoSN} imagePathPrefix={photosPath} hideLightBoxButton={hidePopup}/>
+            }
 
-        <div className="catalog-element-media">
-            <div id="catalog-element-media" className="catalog-element-media__preview" data-index="1 / 4">
-                <div className="catalog-element-media__preview-picture-container">
-                    <picture>
-                        <img id="apartment-photo" src={currentImage}/>
-                    </picture>
-                </div>
-
-                <button className="catalog-element-media-controls catalog-element-media__resize">
-                    Увеличить фото
-                </button>
-
-                <button className="catalog-element-media-controls catalog-element-media__slider-control prev catalog-element-media-prev" onClick={prevImage}>
-                    &larr;
-                </button>
-
-                <button className="catalog-element-media-controls catalog-element-media__slider-control next catalog-element-media-next" onClick={nextImage}>
-                    &rarr;
-                </button>
-            </div>
-
-            <div className="catalog-element-media__thumbs">
-                <div className="catalog-element-media__thumbs-layout" id="catalog-element-media-thumbs-container">
-                    <div className="catalog-element-media__thumbs-scroll" id="catalog-element-media-thumbs-scroll">
-
-                        {imagesList.map(item => {
-                            let imageId = imagesList.indexOf(item)
-
-                            return (
-                                <div className={"catalog-element-media__thumb " + ((currentPhotoSN === imageId) ? "active" : "")} sn={imageId} onClick={() => {
-                                    selectImage(imageId)
-                                }}>
-                                    <picture className="catalog-element-media__thumb-picture">
-                                        <img src={photosPath + item} className="catalog-element-media__thumb-image"/>
-                                    </picture>
-                                </div>
-                            )
-                        })}
-
+            <div className="catalog-element-media">
+                <div id="catalog-element-media" className="catalog-element-media__preview" data-index="1 / 4">
+                    <div className="catalog-element-media__preview-picture-container">
+                        <picture>
+                            <img id="apartment-photo" src={currentImage}/>
+                        </picture>
                     </div>
+
+                    <button className="catalog-element-media-controls catalog-element-media__resize" onClick={showPopup}>
+                        Увеличить фото
+                    </button>
+
+                    <button className="catalog-element-media-controls catalog-element-media__slider-control prev catalog-element-media-prev" onClick={prevImage}>
+                        &larr;
+                    </button>
+
+                    <button className="catalog-element-media-controls catalog-element-media__slider-control next catalog-element-media-next" onClick={nextImage}>
+                        &rarr;
+                    </button>
                 </div>
 
+                <div className="catalog-element-media__thumbs">
+                    <div className="catalog-element-media__thumbs-layout" id="catalog-element-media-thumbs-container">
+                        <div className="catalog-element-media__thumbs-scroll" id="catalog-element-media-thumbs-scroll">
 
-                <div className="catalog-element-media__plan" data-count="0">
-                    <img src="/flat-plan.png"/>
+                            {imagesList.map(item => {
+                                let imageId = imagesList.indexOf(item)
+
+                                return (
+                                    <div className={"catalog-element-media__thumb " + ((currentPhotoSN === imageId) ? "active" : "")} sn={imageId} onClick={() => {
+                                        selectImage(imageId)
+                                    }}>
+                                        <picture className="catalog-element-media__thumb-picture">
+                                            <img src={photosPath + item} className="catalog-element-media__thumb-image"/>
+                                        </picture>
+                                    </div>
+                                )
+                            })}
+
+                        </div>
+                    </div>
+
+
+                    <div className="catalog-element-media__plan" data-count="0">
+                        <img src="/flat-plan.png"/>
+                    </div>
+
+
                 </div>
-
-
             </div>
         </div>
 
