@@ -13,3 +13,5 @@ export { ApartmentDescriptionTab } from './ApartmentDescriptionTab'
 export { ApartmentLegalInfoTab } from './ApartmentLegalInfoTab'
 
 export { AgentDetail } from './AgentDetail'
+
+export { UploadPhotoForm } from './UploadPhotoForm'
